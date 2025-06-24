@@ -1,0 +1,10 @@
+Tổ chức theo tính năng của ứng dụng : 
+- Gom nhóm UI + logic vào xùng 1 nơi : 
+features/
+└── ContactUs/
+    ├── ContactUsPage.tsx        // trang chính
+    ├── ContactForm.tsx          // component form trong trang
+    ├── FAQAccordion.tsx         // accordion hiển thị câu hỏi thường gặp
+    ├── ContactUs.module.css     // CSS riêng cho feature
+    └── contactService.ts        // gọi API liên hệ nếu có
+

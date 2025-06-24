@@ -1,0 +1,1 @@
+Là nơi dùng để chia sẻ và dùng chung dữ liệu giữa các component

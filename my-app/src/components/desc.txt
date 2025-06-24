@@ -1,0 +1,4 @@
+Chứa các component tái sử dụng như :
+- Button : nút bấm dùng chung
+- Model : hộp thoại thông báo chung
+- Input : trường nhập liệu có label + lỗi

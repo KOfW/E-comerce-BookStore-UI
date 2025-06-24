@@ -1,0 +1,6 @@
+Chứa các hàm tiện ích (helper functions):
+- formatCurrency.ts: định dạng số tiền
+- validateEmail.ts: kiểm tra email hợp lệ
+- dateUtils.ts: format ngày giờ,...
+
+Giúp tránh lặp lại code.
