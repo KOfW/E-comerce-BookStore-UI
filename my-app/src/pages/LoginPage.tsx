@@ -1,33 +1,63 @@
-// STEP 15: pages/LoginPage.tsx
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setUser } from '../store/userSlice';
-import { useNavigate } from 'react-router-dom';
+// src/components/LoginForm.tsx
+import React, { useState } from 'react';
+import {
+  Button,
+  TextField,
+  Typography,
+  Container,
+  Box,
+  Paper,
+} from '@mui/material';
 
-const LoginPage = () => {
-  const [name, setName] = useState('');
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+const LoginForm: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    const dummyUser = { id: '1', name, email: `${name}@example.com` };
-    dispatch(setUser(dummyUser));
-    navigate('/');
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Email:', email);
+    console.log('Password:', password);
+    // TODO: Gọi API đăng nhập ở đây
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Đăng nhập</h2>
-      <input
-        type="text"
-        placeholder="Nhập tên của bạn"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <button onClick={handleLogin} style={{ marginLeft: '10px' }}>
-        Đăng nhập
-      </button>
-    </div>
+    <Container maxWidth="sm">
+      <Paper elevation={3} sx={{ padding: 4, marginTop: 8 }}>
+        <Typography variant="h5" gutterBottom textAlign="center">
+          Đăng nhập
+        </Typography>
+        <Box component="form" onSubmit={handleSubmit}>
+          <TextField
+            label="Email"
+            type="email"
+            fullWidth
+            margin="normal"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            label="Mật khẩu"
+            type="password"
+            fullWidth
+            margin="normal"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: 2 }}
+          >
+            Đăng nhập
+          </Button>
+        </Box>
+      </Paper>
+    </Container>
   );
 };
-export default LoginPage;
+
+export default LoginForm;
