@@ -1,4 +1,0 @@
-Chứ các trang chính :
-- Home.tsx
-- About.tsx
-- Notfound.tsx
